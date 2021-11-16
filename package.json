@@ -1,0 +1,24 @@
+{
+  "name": "protoblocks-eval",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn babel test.pb.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProtoBlocks/Evaluation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProtoBlocks/Evaluation/issues"
+  },
+  "homepage": "https://github.com/ProtoBlocks/Evaluation#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "npm:@protoblocks/babel-core@^8.0.2",
+    "babel-plugin-transform-protoblocks": "^8.0.2"
+  }
+}
