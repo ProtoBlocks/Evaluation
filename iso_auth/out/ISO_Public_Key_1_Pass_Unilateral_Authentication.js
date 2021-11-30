@@ -1,5 +1,3 @@
-yarn run v1.22.17
-$ C:\xampp\htdocs\Evaluation\node_modules\.bin\babel ./iso_auth/in/ISO_Public_Key_1_Pass_Unilateral_Authentication.pb.js
 const {
   Protocol: __PROTOBLOCKS_PROTOCOL__
 } = require("protoblocks");
@@ -35,5 +33,3 @@ const ISO_Public_Key_1_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOC
     }
   }]
 });
-
-Done in 0.43s.

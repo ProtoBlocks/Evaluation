@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "yarn babel test.pb.js"
+    "test": "yarn babel test.pb.js",
+    "build": "for file in ./iso_auth/in/*.pb.js; do file_np=${file#\"./iso_auth/in/\"} ; yarn babel \"$file\" -o \"./iso_auth/out/${file_np%.pb.js}.js\"; done"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   "homepage": "https://github.com/ProtoBlocks/Evaluation#readme",
   "devDependencies": {
     "@babel/cli": "^7.16.0",
-    "@babel/core": "npm:@protoblocks/babel-core@^8.0.2",
-    "babel-plugin-transform-protoblocks": "^8.0.2"
+    "@babel/core": "npm:@protoblocks/babel-core@^8.0.3",
+    "babel-plugin-transform-protoblocks": "^8.0.3"
   }
 }

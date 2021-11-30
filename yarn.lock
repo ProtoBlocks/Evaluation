@@ -30,19 +30,19 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.16.0.tgz#ea269d7f78deb3a7826c39a4048eecda541ebdaa"
   integrity sha512-DGjt2QZse5SGd9nfOSqO4WLJ8NN/oHkijbXbPrxuoJO3oIPJL3TciZs9FX+cOHNiY9E9l0opL8g7BmLe3T+9ew==
 
-"@babel/core@npm:@protoblocks/babel-core@^8.0.2":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@protoblocks/babel-core/-/babel-core-8.0.2.tgz#c493678a356040f91500270bd9f8989fa17b7f46"
-  integrity sha512-aMVAyl9REVtsEZKkcDgtCcSx/QBWw1G18uqc83PuPTJnG62vPeQvn7ZzY1wNy6YS8RyYTfOXynUQIlSiAwtjtQ==
+"@babel/core@npm:@protoblocks/babel-core@^8.0.3":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@protoblocks/babel-core/-/babel-core-8.0.3.tgz#1d26d587cf59e16bd2a6dad84d7203d82ac9b430"
+  integrity sha512-VYgaxQC+BRBHa5Ywkj4hzCsP2YzSefVLUfC+c4t79dVOEOPH5rKEJr6LB0d36uDamVqvi8/v+1v6ahc+9Z7R4w==
   dependencies:
     "@babel/code-frame" "^7.16.0"
     "@babel/generator" "^7.16.0"
     "@babel/helper-compilation-targets" "^7.16.0"
     "@babel/helper-module-transforms" "^7.16.0"
     "@babel/helpers" "^7.16.0"
-    "@babel/parser" "npm:@protoblocks/babel-parser@^8.0.1"
+    "@babel/parser" "npm:@protoblocks/babel-parser@^8.0.2"
     "@babel/template" "^7.16.0"
-    "@babel/traverse" "npm:@protoblocks/babel-traverse@^8.0.1"
+    "@babel/traverse" "npm:@protoblocks/babel-traverse@^8.0.2"
     "@babel/types" "npm:@protoblocks/babel-types@^8.0.0"
     convert-source-map "^1.7.0"
     debug "^4.1.0"
@@ -190,10 +190,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.16.3.tgz#271bafcb811080905a119222edbc17909c82261d"
   integrity sha512-dcNwU1O4sx57ClvLBVFbEgx0UZWfd0JQX5X6fxFRCLHelFBGXFfSz6Y0FAq2PEwUqlqLkdVjVr4VASEOuUnLJw==
 
-"@babel/parser@npm:@protoblocks/babel-parser@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@protoblocks/babel-parser/-/babel-parser-8.0.1.tgz#6eded7c3f235924864f67f45240a8f6ef47249cc"
-  integrity sha512-Ci5POGkBZApS1oRwte1oVqCZ6twCTenRItbFtIYyQKOvvQ9hDy8xLUp6v5q6xX6MTtqXK4OQkvwLCMrGCHqcqw==
+"@babel/parser@npm:@protoblocks/babel-parser@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@protoblocks/babel-parser/-/babel-parser-8.0.2.tgz#d2db085df2ac514a089dab6830ea758ec8702f1c"
+  integrity sha512-YORZxaoq/9JprKjfUPo3rKStLP8iz4KDBERIdIgVyTWD3ZE8WYKkhrapd2t6M/bmIZBFI71OLYgEKUt0hOUcfQ==
 
 "@babel/template@^7.16.0":
   version "7.16.0"
@@ -219,17 +219,17 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/traverse@npm:@protoblocks/babel-traverse@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@protoblocks/babel-traverse/-/babel-traverse-8.0.1.tgz#a2f4318e5b5670139b89009416b4cadecb6453c4"
-  integrity sha512-8QIi+wwcp1RSAkG3FpBHwSB/3bv5Z+hgYkbCbdMm3gd4pZz3PXg1yfq8zvVgG5hafiLoVTfjCWlWcUWvD6zedw==
+"@babel/traverse@npm:@protoblocks/babel-traverse@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@protoblocks/babel-traverse/-/babel-traverse-8.0.2.tgz#39d7ac034815c3b4c268d4261ebaa25198999b19"
+  integrity sha512-zw7Gxf37r90HZOQB3zz7CK5FJAnSPh9Ne+5jM22w/FZEmPH2ehtvzhOGuAnopPRy12gqeHkyAd3AG8hCyr6qxg==
   dependencies:
     "@babel/code-frame" "^7.16.0"
     "@babel/generator" "^7.16.0"
     "@babel/helper-function-name" "^7.16.0"
     "@babel/helper-hoist-variables" "^7.16.0"
     "@babel/helper-split-export-declaration" "^7.16.0"
-    "@babel/parser" "npm:@protoblocks/babel-parser@^8.0.1"
+    "@babel/parser" "npm:@protoblocks/babel-parser@^8.0.2"
     "@babel/types" "npm:@protoblocks/babel-types@^8.0.0"
     debug "^4.1.0"
     globals "^11.1.0"
@@ -270,10 +270,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-babel-plugin-transform-protoblocks@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-protoblocks/-/babel-plugin-transform-protoblocks-8.0.2.tgz#91b095e8efc2aa8606f084133d0508f468c05a74"
-  integrity sha512-8v08CIPjaTdqkzYa7kYb4GpjJr6OdZ40lpR8eRYiIU/8HGVtU2s4sYhB7lE/MlLnN6o3TQ3fD+GFX0ImbK7xnw==
+babel-plugin-transform-protoblocks@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-protoblocks/-/babel-plugin-transform-protoblocks-8.0.3.tgz#2f68ee92ed6d7c8a8e1b391e1d845d5928cc14c3"
+  integrity sha512-DGwYoZVR5YGXw2/lYUKENiyzy2yfoD7jDHdn4eUbdgGrSsgRGiPBUgPJjd9XEv68MRhXCN4vw9A3/NHP5Tx3bw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 

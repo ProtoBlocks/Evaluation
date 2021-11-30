@@ -1,3 +1,57 @@
-yarn run v1.22.17
-$ C:\xampp\htdocs\Evaluation\node_modules\.bin\babel ./iso_auth/in/ISO_3_Pass_Mutual_Authentication.pb.js
-info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+const {
+  Protocol: __PROTOBLOCKS_PROTOCOL__
+} = require("protoblocks");
+
+const ISO_3_Pass_Mutual_Authentication = new __PROTOBLOCKS_PROTOCOL__({
+  name: "ISO_3_Pass_Mutual_Authentication",
+  principals: [{
+    name: "Alice",
+    inputs: ["AliceSecret", "BobPublic"]
+  }, {
+    name: "Bob",
+    inputs: ["BobSecret", "AlicePublic"]
+  }],
+  steps: [{
+    origin: "Bob",
+    recipients: ["Alice"],
+    name: "Input",
+    function: async (Bob, Alice) => {
+      const Nonce = nonce();
+      Prover.send({
+        "Nonce": Nonce
+      });
+    }
+  }, {
+    origin: "Alice",
+    recipients: ["Bob"],
+    name: "AliceProve",
+    function: async (Alice, Bob) => {
+      const Signature = sign(Bob.Input.Nonce + Bob.Id, Alice.Input.AliceSecret);
+      const Nonce = nonce();
+      Prover.send({
+        "Signature": Signature,
+        "Nonce": Nonce
+      });
+    }
+  }, {
+    origin: "Bob",
+    recipients: ["Alice"],
+    name: "BobProveVerify",
+    function: async (Bob, Alice) => {
+      const Signature = sign(Alice.AliceProve.Nonce + Alice.Id, Bob.Input.BobSecret);
+      const Verify = verify(Bob.Input.Nonce + Bob.Id, Bob.Input.AlicePublic);
+      Prover.send({
+        "Signature": Signature,
+        "Verify": Verify
+      });
+    }
+  }, {
+    origin: "Verifier",
+    recipients: [],
+    name: "AliceVerify",
+    function: async Verifier => {
+      const Verify = verify(Alice.AliceProve.Nonce + Alice.Id, Alice.Input.BobPublic);
+      return Verify && Bob.BobProveVerify.Verify;
+    }
+  }]
+});
