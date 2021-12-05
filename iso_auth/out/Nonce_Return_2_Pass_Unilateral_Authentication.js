@@ -15,7 +15,10 @@ const Nonce_Return_2_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOCOL
     origin: "Verifier",
     recipients: ["Prover"],
     name: "Challenge",
-    function: async (Verifier, Prover) => {
+    function: async ({
+      verifier: Verifier,
+      prover: Prover
+    }) => {
       const Nonce = nonce();
       const Ciphertext = encrypt(Nonce, Verifier.Input.SecretKey);
       Prover.send({
@@ -26,7 +29,10 @@ const Nonce_Return_2_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOCOL
     origin: "Prover",
     recipients: ["Verifier"],
     name: "Response",
-    function: async (Prover, Verifier) => {
+    function: async ({
+      prover: Prover,
+      verifier: Verifier
+    }) => {
       const Plaintext = decrypt(Verifier.Challenge.Ciphertext, Prover.Input.SecretKey);
       Verifier.send({
         "Plaintext": Plaintext
@@ -36,7 +42,9 @@ const Nonce_Return_2_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOCOL
     origin: "Verifier",
     recipients: [],
     name: "Verify",
-    function: async Verifier => {
+    function: async ({
+      verifier: Verifier
+    }) => {
       const Nonce = decrypt(Verifier.Challenge.Ciphertext, Verifier.Input.SecretKey);
       return Plaintext === Nonce;
     }

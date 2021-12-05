@@ -270,10 +270,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-babel-plugin-transform-protoblocks@^8.0.3:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-protoblocks/-/babel-plugin-transform-protoblocks-8.0.3.tgz#2f68ee92ed6d7c8a8e1b391e1d845d5928cc14c3"
-  integrity sha512-DGwYoZVR5YGXw2/lYUKENiyzy2yfoD7jDHdn4eUbdgGrSsgRGiPBUgPJjd9XEv68MRhXCN4vw9A3/NHP5Tx3bw==
+babel-plugin-transform-protoblocks@^8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-protoblocks/-/babel-plugin-transform-protoblocks-8.0.5.tgz#1a299ad559f358efa51adc3bbd6136158f91589f"
+  integrity sha512-PKzGD4JeDu36fF5c95xoA6BCcIr+Vk74HSOeQV89NCj6L/VEM5Ty38A321aLFRyQB55oiCSmFqzOhkJ8bOeQaA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 

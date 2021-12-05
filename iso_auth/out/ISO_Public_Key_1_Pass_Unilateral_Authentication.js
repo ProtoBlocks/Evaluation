@@ -15,7 +15,10 @@ const ISO_Public_Key_1_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOC
     origin: "Prover",
     recipients: ["Verifier"],
     name: "Prove",
-    function: async (Prover, Verifier) => {
+    function: async ({
+      prover: Prover,
+      verifier: Verifier
+    }) => {
       const Timestamp = timestamp(10000);
       const Signature = sign(Timestamp + Verifier.Id, Prover.Input.PrivateKey);
       Verifier.send({
@@ -26,7 +29,9 @@ const ISO_Public_Key_1_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOC
     origin: "Verifier",
     recipients: [],
     name: "Verify",
-    function: async Verifier => {
+    function: async ({
+      verifier: Verifier
+    }) => {
       const Timestamp = timestamp(10000);
       const Verify = verify(Timestamp + Verifier.Id, Verifier.Input.PublicKey);
       return Verify;

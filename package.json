@@ -20,6 +20,6 @@
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "npm:@protoblocks/babel-core@^8.0.3",
-    "babel-plugin-transform-protoblocks": "^8.0.3"
+    "babel-plugin-transform-protoblocks": "^8.0.5"
   }
 }

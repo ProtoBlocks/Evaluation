@@ -15,7 +15,10 @@ const ISO_Public_Key_2_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOC
     origin: "Verifier",
     recipients: ["Prover"],
     name: "Challenge",
-    function: async (Verifier, Prover) => {
+    function: async ({
+      verifier: Verifier,
+      prover: Prover
+    }) => {
       const Nonce = nonce();
       Prover.send({
         "Nonce": Nonce
@@ -25,7 +28,10 @@ const ISO_Public_Key_2_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOC
     origin: "Prover",
     recipients: ["Verifier"],
     name: "Response",
-    function: async (Prover, Verifier) => {
+    function: async ({
+      prover: Prover,
+      verifier: Verifier
+    }) => {
       const Signature = sign(Verifier.Challenge.Nonce + Verifier.Id, Prover.Input.PrivateKey);
       Verifier.send({
         "Signature": Signature
@@ -35,7 +41,9 @@ const ISO_Public_Key_2_Pass_Unilateral_Authentication = new __PROTOBLOCKS_PROTOC
     origin: "Verifier",
     recipients: [],
     name: "Verify",
-    function: async Verifier => {
+    function: async ({
+      verifier: Verifier
+    }) => {
       const Verify = verify(Verifier.Challenge.Nonce + Verifier.Id, Verifier.Input.PublicKey);
       return Verify;
     }

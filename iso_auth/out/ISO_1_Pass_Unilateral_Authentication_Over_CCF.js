@@ -15,7 +15,10 @@ const ISO_1_Pass_Unilateral_Authentication_Over_CCF = new __PROTOBLOCKS_PROTOCOL
     origin: "Prover",
     recipients: ["Verifier"],
     name: "Prove",
-    function: async (Prover, Verifier) => {
+    function: async ({
+      prover: Prover,
+      verifier: Verifier
+    }) => {
       const Timestamp = timestamp(10000);
       const Hash = hash(Timestamp + Verifier.Id + Prover.Input.Secret);
       Verifier.send({
@@ -26,7 +29,9 @@ const ISO_1_Pass_Unilateral_Authentication_Over_CCF = new __PROTOBLOCKS_PROTOCOL
     origin: "Verifier",
     recipients: [],
     name: "Verify",
-    function: async Verifier => {
+    function: async ({
+      verifier: Verifier
+    }) => {
       const Timestamp = timestamp(10000);
       const Hash = hash(Timestamp + Verifier.Id + Verifier.Input.Secret);
       return Hash === Prover.Response.Hash;
